@@ -1,0 +1,7 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": [true, ["express", "body-parser", "cookie-session", "dotenv"]]
+  }
+}
