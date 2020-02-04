@@ -1,5 +1,9 @@
 # sso-oidc
 
+[![NPM][npm]][npm-url]
+[![Build][build]][build-badge]
+[![Coverage][codecov-shield]][codecov]
+
 > Utility to instrument Single Sign-on (SSO) for Node.js and Express.
 
 This project illustrates the basic client/server login flow for Single Page Applications (SPA) using Single Sign-in (SSO) with OpenID Connect (oidc).
@@ -56,7 +60,7 @@ app.get('/check', sso.check);
 
 // Authenticates user using the temporary code returned from silent authorization.
 app.post('/callback', sso.token, sso.introspect, (req, res) => {
-  res.send({ user_idd: req.session.user_id });
+  res.send({ user_id: req.session.user_id });
 });
 
 // Uses a wildcard to authenticate POST requests for a common, protected route.
@@ -73,3 +77,10 @@ Refer to the [`create-react-app` example](examples/create-react-app) for a basic
 ## License
 
 [Apache 2.0](LICENSE)
+
+[npm]: https://img.shields.io/npm/v/sso-oidc.svg?color=blue
+[npm-url]: https://npmjs.com/package/sso-oidc
+[build]: https://travis-ci.com/ibm/sso-oidc.svg?branch=master
+[build-badge]: https://travis-ci.com/ibm/sso-oidc
+[codecov]: https://codecov.io/gh/ibm/sso-oidc
+[codecov-shield]: https://img.shields.io/codecov/c/github/ibm/sso-oidc.svg
